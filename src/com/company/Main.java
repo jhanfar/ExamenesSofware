@@ -336,7 +336,7 @@ public class Main {
             }
         }
         System.out.println("1:" + cant_num[0]);
-        System.out.println("2:" + cant_num[1]);
+        System.out.println("2:" + cant_num[1]);// prueba
         System.out.println("3:" + cant_num[2]);
         System.out.println("4:" + cant_num[3]);
         System.out.println("5:" + cant_num[4]);
