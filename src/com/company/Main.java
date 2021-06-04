@@ -13,7 +13,7 @@ public class Main {
 
         String sPalabra = "palabra";
 
-        String []vector = {"a3", "b", "c", "c","b","a"};
+        String []vector = {"a", "b", "c", "c","b","a"};
         List<Integer> lista = Arrays.asList(1,3,4,5,7,2,5,2);
 
         Integer [] lista_alterna = {1,3,5,6,7,4};
@@ -22,8 +22,8 @@ public class Main {
 
         //NumeroMayor(vector);
         //Simetrica (vector, 8);
-        //ConstruirMatrix(7);
-        //fizz(41);
+        //ConstruirMatrix(10);
+       // fizz(41);
 
        /* List<Integer> lista = new ArrayList<Integer>();
 
@@ -43,13 +43,56 @@ public class Main {
         //int valor[] = {1, 2, 4, 5, 6};
         int valor[] = {1,2,2,4,5,6,7,7,7,7,8,8,8};
 
-        //verificarOrden(valor);
+       // verificarOrden(valor);
+
+        int [] array = {1, 2, 9, 1, 1, 1, 1, 1, 3};
+        rutaOptima (array);
         //ordenar(valor);
         //mostrarDescendente();
         //histograma(valor);
-        Ocurrencias(valor);
+        //Ocurrencias(valor);
         //Matriz(valor,4);
         //Suma(valor);
+    }
+
+
+    public static void rutaOptima(int vector[])
+    {
+        Integer matrix [][] = new Integer[3][3];
+        int controladora= 3;
+        String resultado ="";
+
+        int col1=0, col2=0, col3=0, suma=0, suma_minima=10000;
+
+
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    matrix[i][j] = vector[j+ controladora*i];
+                }
+            }
+
+        for (int u=0; u<3 ; u++) {
+            col1 = matrix[u][0];
+            for (int i = 0; i < 3; i++) {
+                col2 = matrix[i][1];
+                for (int j = 0; j < 3; j++) {
+                    col3 = matrix[j][2];
+
+                    suma = col1 + col2+ col3;
+
+                  //  if(suma < suma_minima   && (i+1)>= j && (i+1-u) <3)
+                    if(suma < suma_minima   && (i+1)>= j && (u+1) >=i && (u-i)<=1 && (i-j)<=1)
+                    {
+                        resultado = matrix[u][0] +" "+matrix[i][1]+" "+matrix[j][2];
+                        suma_minima = suma;
+                    }
+
+                }
+            }
+        }
+
+        System.out.println("la menor suma la da los siguientes números" + resultado);
+
     }
 
     public  static void matrixUnidimencional(int vector[][]){
@@ -386,7 +429,8 @@ public class Main {
         public static List<Integer>  ordenar(Integer [] lista){
 
 
-       List<Integer> listaNueva = Arrays.stream(lista).sorted().toList();
+       List<Integer> listaNueva = null ;//Arrays.stream(lista).sorted().toList();
+
         return listaNueva;
 
     }
