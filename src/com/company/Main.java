@@ -22,7 +22,7 @@ public class Main {
 
         //NumeroMayor(vector);
         //Simetrica (vector, 8);
-        //ConstruirMatrix(10);
+        //ConstruirMatrixdeX(10);
        // fizz(41);
 
        /* List<Integer> lista = new ArrayList<Integer>();
@@ -45,12 +45,12 @@ public class Main {
 
        // verificarOrden(valor);
 
-        int [] array = {1, 2, 9, 1, 1, 1, 1, 1, 3};
-        rutaOptima (array);
+        int [] array = {1, 0, 0, 1, 1, 1, 1, 1, 3};
+        //rutaOptima (array);
         //ordenar(valor);
         //mostrarDescendente();
-        //histograma(valor);
-        //Ocurrencias(valor);
+        //histograma(valor); // muestra con un * la cantidad de veces que aparece un numero
+        //Ocurrencias(valor); //  imprima el numero que tiene mas ocurrencias consecutivas en el arreglo
         //Matriz(valor,4);
         //Suma(valor);
     }
@@ -80,7 +80,6 @@ public class Main {
 
                     suma = col1 + col2+ col3;
 
-                  //  if(suma < suma_minima   && (i+1)>= j && (i+1-u) <3)
                     if(suma < suma_minima   && (i+1)>= j && (u+1) >=i && (u-i)<=1 && (i-j)<=1)
                     {
                         resultado = matrix[u][0] +" "+matrix[i][1]+" "+matrix[j][2];
@@ -122,7 +121,7 @@ public class Main {
     }
 
 
-    public static void ConstruirMatrix(int n)
+    public static void ConstruirMatrixdeX(int n)
     {
         String resul[][]= new String[n][n];
 
